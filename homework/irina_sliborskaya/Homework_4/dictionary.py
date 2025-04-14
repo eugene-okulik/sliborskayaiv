@@ -11,7 +11,7 @@ my_dict['list'].append('Poland')
 my_dict['list'].pop(1)
 
 # actions with 'dict': add and remove
-my_dict["my_dict"][("i am a tuple",)] = "you are not"
+my_dict["dict"][("i am a tuple",)] = "you are not"
 my_dict['dict'].pop('Lime')
 
 # action with 'set': add and remove
