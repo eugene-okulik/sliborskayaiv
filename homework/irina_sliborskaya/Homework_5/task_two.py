@@ -24,4 +24,3 @@ print(result3 + 10)
 # for options in text_options:
 #     result = int(options.split(':')[1].strip()) + 10
 #     print(result)
-    
