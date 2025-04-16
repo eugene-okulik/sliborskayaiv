@@ -1,3 +1,5 @@
+from unicodedata import digit
+
 text1 = 'результат операции: 42'
 text2 = 'результат операции: 514'
 text3 = 'результат работы программы: 9'
@@ -6,13 +8,13 @@ text3 = 'результат работы программы: 9'
 # print(text1.index(':'))
 # print(text3.index(':'))
 
-result1 = int(text1[20:])
-result2 = int(text2[20:])
-result3 = int(text3[27:])
+result1 = int(text1.split()[-1]) + 10
+result2 = int(text2.split()[-1]) + 10
+result3 = int(text3.split()[-1]) + 10
 
-print(result1 + 10)
-print(result2 + 10)
-print(result3 + 10)
+print(result1)
+print(result2)
+print(result3)
 
 # or another way
 # text_options = [
