@@ -16,6 +16,7 @@ def operations(func):
 
     return wrapper
 
+
 @operations
 def calc(first, second, operation):
     if operation == '+':
@@ -26,5 +27,6 @@ def calc(first, second, operation):
         return first / second
     elif operation == '*':
         return first * second
+
 
 calc()
