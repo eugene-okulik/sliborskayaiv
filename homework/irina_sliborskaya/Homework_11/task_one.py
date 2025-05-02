@@ -33,7 +33,7 @@ class Workbooks(Books):
 
 
 books = [
-    Books('Julie_and_Julia', 'Julie Powell', 132,  3423423, False),
+    Books('Julie_and_Julia', 'Julie Powell', 132, 3423423, False),
     Books('The Help', 'Kathryn Stockett', 256, 5324324, False),
     Books('Idiot', 'Fedor Dostoevski', 345, 45623423, True),
     Books('The Outsider', 'Albert Camus', 543, 576475543, False),
