@@ -89,18 +89,18 @@ class Bouquet:
 soft_bouquet = Bouquet()
 soft_bouquet.add_flowers([rose3, peon2, peon3, alstroemeria2, alstroemeria1])
 
-#cost of bouquet
+# cost of bouquet
 print(f"Cost of soft bouquet: {soft_bouquet.calculate_total_cost()}$")
 
-#how long this bouquet will live
+# how long this bouquet will live
 print(f"Lifetime of the soft bouquet: {soft_bouquet.calculate_avg_lifetime()}")
 
-#sorting
+# sorting
 print("\nSection with sorting:")
 soft_bouquet.sort_by('stem_length')
 soft_bouquet.sort_by('cost')
 soft_bouquet.sort_by('lifetime')
 
-#search
+# search
 print("\nSection with searching:")
 soft_bouquet.find_flower_by_colour("Soft Pink")
