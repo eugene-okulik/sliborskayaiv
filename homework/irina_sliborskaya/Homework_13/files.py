@@ -2,11 +2,13 @@ import datetime
 
 dates = []
 
+
 def read_file():
     file_path = "D:\\Autotesting\\Python\\Project\\sliborskayaiv\\homework\\eugene_okulik\\hw_13\\data.txt"
     with open(file_path, 'r', encoding='utf-8') as data_file:
         for line in data_file.readlines():
             yield line
+
 
 for data_line in read_file():
     split_text = data_line.split(' - ')
