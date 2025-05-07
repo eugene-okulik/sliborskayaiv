@@ -1,0 +1,41 @@
+insert into students (name, second_name)
+values ('Irina', 'Cat')
+
+insert into books (title, taken_by_student_id)
+values ('Python', 20290), ('Java', 20290)
+
+
+insert into `groups` (title, start_date, end_date)
+values ('Cat Person', 'Sep 1, 2024', 'Aug 31, 2034')
+
+update students set group_id = (select id from `groups` g  where title = 'Cat Person') where id = 20290
+
+
+insert into subjets (title) values ('Math in English'), ('English reading'), ('Biology for you')
+
+
+insert into lessons (title, subject_id)
+values ('Math part 1', 10243), ('Math part 2', 10243), ('English part 1', 10244), ('English part 2', 10244), ('Biology part 1', 10245), ('Biology part 2', 10245)
+
+
+insert into marks (value, lesson_id, student_id)
+values (9, 9693, 20290),
+(9, 9694, 20290),
+(8, 9695, 20290),
+(10, 9696, 20290),
+(8, 9697, 20290),
+(10, 9698, 20290)
+
+
+select * from marks m where student_id = 20290
+
+select * from books b  where taken_by_student_id  = 20290
+
+select s.name, s.second_name, g.title as group_title, b.title as book_title, m.value as mark, l.title as lesson, s2.title as subject
+from students s
+join `groups` g on s.group_id = g.id
+join books b on s.id  = b.taken_by_student_id
+join marks m on s.id = m.student_id
+join lessons l on l.id = m.lesson_id
+join subjets s2 on s2.id = l.subject_id
+where s.id = 20290
