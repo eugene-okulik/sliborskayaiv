@@ -1,11 +1,16 @@
 import datetime
+import os
+
 
 dates = []
 
+base_path = os.path.dirname(__file__)
+homework_path = os.path.dirname(os.path.dirname(base_path))
+okulik_file_path = os.path.join(homework_path, 'eugene_okulik', 'hw_13', 'data.txt')
+
 
 def read_file():
-    file_path = "D:\\Autotesting\\Python\\Project\\sliborskayaiv\\homework\\eugene_okulik\\hw_13\\data.txt"
-    with open(file_path, 'r', encoding='utf-8') as data_file:
+    with open(okulik_file_path, 'r', encoding='utf-8') as data_file:
         for line in data_file.readlines():
             yield line
 
