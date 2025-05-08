@@ -18,9 +18,9 @@ def create_data(cursor):
     student_id = cursor.lastrowid
 
     cursor.execute(f"insert into books (title, taken_by_student_id) "
-                f"values ('New_book', {student_id}), ('Nature and we', {student_id})")
+                   f"values ('New_book', {student_id}), ('Nature and we', {student_id})")
     cursor.execute("insert into `groups` (title, start_date, end_date) "
-                "values ('Final', 'Sep 1, 2024', 'Aug 31, 2034')")
+                   "values ('Final', 'Sep 1, 2024', 'Aug 31, 2034')")
     group_id = cursor.lastrowid
 
     cursor.execute(f"update students set group_id = {group_id} where id = {student_id}")
@@ -59,27 +59,31 @@ def create_data(cursor):
     cursor.executemany(insert_query, values)
     return student_id
 
+
 student_id = create_data(cursor)
 
 db.commit()
+
 
 def get_student_marks(cursor, student_id):
     cursor.execute(f"select * from marks m where student_id = {student_id}")
     print("Student's marks: ")
     print(cursor.fetchall())
 
+
 def get_student_books(cursor, student_id):
     cursor.execute(f"select * from books b  where taken_by_student_id  = {student_id}")
     print("Student took the following books: ")
     print(cursor.fetchall())
 
+
 def get_student_data(cursor, student_id):
     query = '''
     select s.name, s.second_name, 
-    g.title as group_title, 
-    b.title as book_title, 
-    m.value as mark, 
-    l.title as lesson, 
+    g.title as group_title,
+    b.title as book_title,
+    m.value as mark,
+    l.title as lesson,
     s2.title as subject
     from students s
     join `groups` g on s.group_id = g.id
