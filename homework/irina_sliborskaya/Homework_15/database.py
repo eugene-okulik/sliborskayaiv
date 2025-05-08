@@ -79,7 +79,7 @@ def get_student_books(cursor, student_id):
 
 def get_student_data(cursor, student_id):
     query = '''
-    select s.name, s.second_name, 
+    select s.name, s.second_name,
     g.title as group_title,
     b.title as book_title,
     m.value as mark,
