@@ -27,5 +27,6 @@ def log_parser():
     except FileNotFoundError:
         print("No such file")
 
+
 if __name__ == "__main__":
     log_parser()
