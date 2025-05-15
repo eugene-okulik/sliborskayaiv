@@ -47,7 +47,7 @@ def put_an_object():
         "data": {
             "color": "blue",
             "size": "mid"
-    }
+        }
     }
     headers = {"Content-Type": "application/json"}
     response = requests.put(
@@ -66,7 +66,7 @@ def patch_an_object():
         "data": {
             "color": "yellow",
             "size": "small"
-    }
+        }
     }
     headers = {"Content-Type": "application/json"}
     response = requests.patch(
