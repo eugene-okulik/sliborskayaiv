@@ -41,8 +41,9 @@ def new_object_id():
     '{"name": "ISL object 2","data": {"color": "yellow","size": "111"}}',
     ' {"name": "ISL object 2","data": {"color": "blue","size": "222"}}',
     '{"name": "ISL object 2","data": {"color": "white","size": "333"}}'
-    ])
-def test_post_an_object(session_period,each_test_period, json):
+    ]
+    )
+def test_post_an_object(session_period, each_test_period, json):
     headers = {"Content-Type": "application/json"}
     response = requests.post(
         "http://167.172.172.115:52353/object",
