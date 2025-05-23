@@ -5,7 +5,6 @@ from test_api_isliborskaya.endpoints.endpoint import Endpoint
 
 class UpdateObject(Endpoint):
 
-
     @allure.step('Update an object')
     def make_changes_in_object(self, object_id, payload, headers=None):
         headers = headers if headers else self.headers
@@ -16,7 +15,6 @@ class UpdateObject(Endpoint):
         )
         self.json = self.response.json()
         return self.response
-
 
     @allure.step('Partially update an object')
     def patch_object(self, object_id, payload, headers=None):

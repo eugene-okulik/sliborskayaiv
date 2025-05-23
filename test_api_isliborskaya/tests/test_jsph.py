@@ -1,11 +1,10 @@
 import pytest
-from test_api_isliborskaya.conftest import delete_object_endpoint
 
 
 opt = [
-    {"name": "ISL object 3", "data": {"color": "yellow","size": "111"}},
-    {"name": "ISL object 2", "data": {"color": "blue","size": "222"}},
-    {"name": "ISL object 1", "data": {"color": "new","size": "333"}}
+    {"name": "ISL object 3", "data": {"color": "yellow", "size": "111"}},
+    {"name": "ISL object 2", "data": {"color": "blue", "size": "222"}},
+    {"name": "ISL object 1", "data": {"color": "new", "size": "333"}}
 ]
 
 
@@ -20,7 +19,7 @@ def test_post_an_object(create_object_endpoint, test_data, delete_object_endpoin
 
 
 def test_put_an_object(update_object_endpoint, create_object_endpoint, delete_object_endpoint):
-    payload = {"name": "ISL object PUT", "data": {"color": "yellow","size": "555"}}
+    payload = {"name": "ISL object PUT", "data": {"color": "yellow", "size": "555"}}
     create_object_endpoint.new_object(payload)
     object_id = create_object_endpoint.json['id']
     payload_to_test = {"name": "ISL object PUT edited", "data": {"color": "blue", "size": "555"}}
@@ -43,7 +42,7 @@ def test_patch_an_object(update_object_endpoint, create_object_endpoint, delete_
 
 
 def test_delete_an_object(delete_object_endpoint, create_object_endpoint):
-    payload = {"name": "ISL object TEST", "data": {"color": "yellow","size": "555"}}
+    payload = {"name": "ISL object TEST", "data": {"color": "yellow", "size": "555"}}
     create_object_endpoint.new_object(payload)
     object_id = create_object_endpoint.json['id']
     delete_object_endpoint.delete_object(object_id)

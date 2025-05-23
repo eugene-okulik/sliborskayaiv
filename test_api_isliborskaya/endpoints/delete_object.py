@@ -5,7 +5,6 @@ from test_api_isliborskaya.endpoints.endpoint import Endpoint
 
 class DeleteObject(Endpoint):
 
-
     @allure.step('Delete an object')
     def delete_object(self, object_id, headers=None):
         headers = headers if headers else self.headers
