@@ -22,3 +22,12 @@ def update_object_endpoint():
 @pytest.fixture()
 def delete_object_endpoint():
     return DeleteObject()
+
+
+@pytest.fixture()
+def new_object_id(create_object_endpoint, delete_object_endpoint):
+    payload = {"name": "ISL object TEST", "data": {"color": "yellow", "size": "555"}}
+    create_object_endpoint.new_object(payload)
+    object_id = create_object_endpoint.json['id']
+    yield object_id
+    delete_object_endpoint.delete_object(object_id)
