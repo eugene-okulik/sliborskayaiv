@@ -11,6 +11,7 @@ def driver():
     chrome_driver.maximize_window()
     yield chrome_driver
 
+
 def test_submit_form(driver):
     driver.get('https://www.qa-practice.com/elements/select/single_select')
     driver.find_element(By.ID, 'id_choose_language').click()
@@ -19,6 +20,7 @@ def test_submit_form(driver):
     driver.find_element(By.ID, 'submit-id-submit').click()
     result_text = driver.find_element(By.ID, 'result-text')
     assert result_text.text == selected_option
+
 
 def test_check_text(driver):
     driver.get('https://the-internet.herokuapp.com/dynamic_loading/2')
