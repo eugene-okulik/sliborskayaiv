@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -14,6 +15,8 @@ def submit_form():
     email_field = driver.find_element(By.ID, 'userEmail')
     female_gender_option = driver.find_elements(By.CLASS_NAME, 'custom-control')
     mobile_number = driver.find_element(By.ID, 'userNumber')
+    date_of_birth = driver.find_element(By.ID, 'dateOfBirthInput')
+    subject_selector = driver.find_element(By.CSS_SELECTOR, ".subjects-auto-complete__value-container input")
     hobbies_checkbox_1 = driver.find_element(By.XPATH, '//label[@for="hobbies-checkbox-1"]')
     address_field = driver.find_element(By.ID, 'currentAddress')
     state_selector = driver.find_element(By.XPATH, "//div[contains(text(), 'Select State')]")
@@ -25,6 +28,11 @@ def submit_form():
     email_field.send_keys('test@test.co')
     female_gender_option[1].click()
     mobile_number.send_keys('1234567890')
+    date_of_birth.click()
+    selected_date = driver.find_element(By.XPATH, '//div[@role="option" and text()="10"]')
+    selected_date.click()
+    subject_selector.send_keys('English')
+    subject_selector.send_keys(Keys.ENTER)
     hobbies_checkbox_1.click()
     address_field.send_keys('New Street, 123, 05-358, Warsaw, Poland')
     state_selector.click()
