@@ -8,11 +8,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+
 @pytest.fixture()
 def driver():
     chrome_driver = webdriver.Chrome()
     chrome_driver.maximize_window()
     yield chrome_driver
+
 
 def test_add_item(driver):
     driver.get('https://www.demoblaze.com/index.html')
