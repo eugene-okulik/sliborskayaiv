@@ -15,8 +15,8 @@ def driver():
 
 def test_compare_item(driver):
     driver.get('https://magento.softwaretestingboard.com/gear/bags.html')
-    WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//div[@role="dialog"]')))
-    driver.find_element(By.XPATH, '//button[@aria-label="Consent"]').click()
+    (WebDriverWait(driver, 10).
+     until(EC.visibility_of_element_located((By.XPATH, '//button[@aria-label="Consent"]'))).click())
     selected_item = driver.find_element(By.XPATH,
                                         '//li[contains(@class, "product-item")]//a[@class="product-item-link"]')
     selected_item_name = selected_item.text.strip()
