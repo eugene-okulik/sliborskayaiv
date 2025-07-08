@@ -30,4 +30,3 @@ def test_task_two(page: Page):
     city_selector.click()
     page.locator("//div[text()='Karnal']").click()
     page.get_by_text('Submit').click()
-
