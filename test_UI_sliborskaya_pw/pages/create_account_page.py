@@ -15,7 +15,6 @@ last_name_error_loc = "#lastname-error"
 class CreateAccount(BasePage):
     page_url = "/customer/account/create/"
 
-
     def fill_create_form(self, firstname, lastname, email, psw, psw_confirmation):
         firstname_input = self.find(firstname_loc)
         last_name_input = self.find(last_name_loc)
@@ -30,16 +29,13 @@ class CreateAccount(BasePage):
         psw_confirmation_input.fill(psw_confirmation)
         create_an_account_button.click()
 
-
     def check_email_address_error_is_displayed(self):
         email_error = self.find(email_address_error_loc)
         expect(email_error).to_be_visible()
 
-
     def check_password_format_error_is_displayed(self):
         psw_error = self.find(psw_error_loc)
         expect(psw_error).to_be_visible()
-
 
     def check_lastname_is_required(self):
         last_name_error = self.find(last_name_error_loc)
